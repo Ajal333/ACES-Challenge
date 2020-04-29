@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/Ajal333/ACES-Challenge/issues"
   },
-  "homepage": "https://github.com/Ajal333/ACES-Challenge#readme"
+  "homepage": "https://github.com/Ajal333/ACES-Challenge#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "nodemailer": "^6.4.6"
+  }
 }

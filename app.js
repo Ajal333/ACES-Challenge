@@ -22,12 +22,17 @@ server.get("/", (req, res) => {
   });
 
 server.get("/thankyou", (req, res) => {
-    res.render("page2");
+    res.render("thanku");
     console.log("Form submitted...");
   });
 
 server.post("/submit", (req, res) => {
     evname = req.body.evname;
+    caption = req.body.caption;
+    desc = req.body.desc;
+    reg = req.body.reg;
+    coname = req.body.coname;
+    email = req.body.email;
     console.log(evname);
 });
 
