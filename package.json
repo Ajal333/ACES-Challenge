@@ -1,0 +1,19 @@
+{
+  "name": "aces-challenge",
+  "version": "1.0.0",
+  "description": "a website to complete aces challenge",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ajal333/ACES-Challenge.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ajal333/ACES-Challenge/issues"
+  },
+  "homepage": "https://github.com/Ajal333/ACES-Challenge#readme"
+}
