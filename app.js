@@ -21,7 +21,7 @@ server.get("/", (req, res) => {
     console.log("Index page loaded...");
   });
 
-server.get("/thankyou", (req, res) => {
+server.get("/second", (req, res) => {
     res.render("thanku");
     console.log("Form submitted...");
   });
@@ -30,10 +30,25 @@ server.post("/submit", (req, res) => {
     evname = req.body.evname;
     caption = req.body.caption;
     desc = req.body.desc;
-    reg = req.body.reg;
+    if (req.body.reg==='0')
+      reg = 'NA';
+    else
+      reg = req.body.reg;
     coname = req.body.coname;
     email = req.body.email;
-    console.log(evname);
+    let details = `
+    Event Details
+    Event Name : ${evname}
+    Caption : ${caption}
+    Description : ${desc}
+    Registration : ${reg}
+
+    Co-ordinator Details
+    Name : ${coname}
+    Email : ${email}
+    `;
+    console.log(details);
+    res.redirect('/second');
 });
 
 const port = process.env.port | 7000
