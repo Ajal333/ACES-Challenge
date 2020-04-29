@@ -1,0 +1,134 @@
+body
+{
+    margin: 20px;
+    background-image: url(../img/milky_way.jpg);
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    text-align: center;
+}
+/* Design : DHISHNA EVENTS */
+.header
+{
+    text-align: center;
+    color: darkmagenta;
+    font-size: xx-large;
+    font-family: 'Righteous', cursive;
+    word-spacing: 10px;
+    letter-spacing: 5px;
+}
+
+/* Split the screen in half */
+.split {
+    height: 100%;
+    width: 50%;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+}
+/* Control the right side */
+.right {
+    right: 0;
+    margin-top: 55px;
+}
+/* Aligning the contents to centre in both left and right halves */
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+ }
+
+/* The form */
+.portal
+{
+    font-size: 20px;
+    margin: 30px;
+    text-align: center;
+}
+
+/* Design : Text boxes */
+.box
+{
+    border: 1px solid rgba(134, 75, 175, 0.685);
+    color: white;
+    background-color: transparent;
+    border-radius: 5px;
+    padding: 10px 50px; 
+    outline: none;   
+}
+/* Design : Description Box*/
+.desc{
+    border: 1px solid rgba(134, 75, 175, 0.685);
+    color: white;
+    background-color: transparent;
+    border-radius: 5px;
+    padding: 30px 50px;
+    outline: none;
+}
+
+/* Open or closed Option list */
+.options{
+    border: 1px solid rgba(134, 75, 175, 0.685);
+    background-color: black;
+    border-radius: 5px;
+    padding: 10px 50px;
+    color: white;
+    outline: none;
+    cursor: pointer;
+}
+.options option:checked{
+    cursor: pointer;
+    background: darkmagenta;
+}
+
+/* Choose a file button */
+.inputfile{
+    height: 0.1px;
+    width: 0.1px;          /* Hiding the default button */
+    opacity: 0;
+    overflow: hidden;
+  }
+.inputfile+label{
+    background-color: transparent;
+    border: 1px solid rgba(134, 75, 175, 0.685);
+    border-radius: 20px;           /* Designing label to a new button */
+    padding: 2px 10px;
+    font-size: 15px;
+  }
+.inputfile+label:hover{
+    cursor: pointer;
+    border: 2px solid rgba(134, 75, 175, 0.685);
+  }
+
+  /* Re-Size the dispaly image */
+.outimg img {
+    height: 120px;
+    width: 120px;
+    background-size: cover;
+    background-position: center;
+    border: none;
+  }
+  /* Submit Button */
+.button{
+    border: 1px solid darkmagenta;
+    background-color: darkmagenta;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px 20px;
+    position: relative;
+    margin-right: 530px;
+    outline: none;
+}
+.button:hover{
+    border: 2px solid darkmagenta;
+    background-color: transparent;
+    color: darkmagenta;
+}
+
+.thanku{
+  text-align: center;
+  font-size: 20px;
+}

@@ -1,0 +1,82 @@
+<html>
+    <head>
+        <link rel="Stylesheet" href="../assets/css/styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto&display=swap" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>DHISHNA | Registeration</title>
+    </head>
+    <body>
+        <div class="header"><h1>DHISHNA EVENTS</h1></div><br/>
+        <div class="portal">
+        <div class="split left">
+        <div class="centered">
+            <form action="/submit" method="POST">
+                <br/><br/><br/>
+                <label>Event Info</label><br/><br/>
+                <input 
+                    type="text"
+                    id="evname"
+                    name="evname"
+                    class="box"
+                    placeholder="Enter the Event Name"
+                /><br/><br/>
+                <input 
+                    type="text"
+                    id="caption"
+                    name="caption"
+                    class="box"
+                    placeholder="Enter a caption "
+                /><br/><br/>
+                <textarea 
+                    type="text"
+                    id="fname"
+                    name="fname"
+                    class="desc"
+                    placeholder="Enter the description"
+                ></textarea><br/><br/>
+                <select id="reg" name="reg" class="options">
+                    <option value="0">Is Registeration open</option>
+                    <option value="1">Open</option>
+                    <option value="2">Closed</option>
+                </select><br/><br/><br/>
+                
+            </div>
+            </div>
+            <div class="split right">
+            <div class="centered">
+                <label>Co-ordinator Info</label><br/><br/>
+                <input 
+                    type="text"
+                    id="coname"
+                    name="coname"
+                    class="box"
+                    placeholder="Enter name"
+                /><br/><br/>
+                <input 
+                    type="text"
+                    id="email"
+                    name="email"
+                    class="box"
+                    placeholder="Enter email-ID"
+                /><br/><br/>
+                <label>Upload Image : </label>
+                <input 
+                    type="file"
+                    id="image"
+                    name="image"
+                    class="inputfile" 
+                    accept="image/*" 
+                    onchange="loadFile(event)"
+                />
+                <label for="image">Choose a file</label><br/>
+                <br/><div class="outimg"><img id="output"/></div>
+                <br/><br/>
+                <a href="./thanku.html"><button class="button"><b>SUBMIT</b></button></a>
+            </div>
+            </div>
+            
+            </form>
+        </div>
+    <script src="../assets/js/app.js"></script>
+    </body>
+</html>
