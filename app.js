@@ -46,13 +46,13 @@ server.post("/submit", (req, res) => {
     Co-ordinator Details
     Name : ${coname}
     Email : ${email}
+    ___________________________________
     `;
-    console.log(details);
-    fs.writeFile("/reg_details", details, function(err) {
+    fs.appendFile("reg_details.txt", details, function(err) {
       if(err) {
           return console.log(err);
       }
-      console.log("The file was saved!");
+      console.log("Details Saved...");
   });
     res.redirect('/second');
 });
