@@ -2,6 +2,9 @@ const express = require("express");
 const ejs = require("ejs");
 const bodyParser = require("body-parser");
 const fs = require('fs');
+const multer = require('multer');
+const path = require('path');
+const uuid = require('uuid/v4'); 
 
 // CREATE SERVER
 const server = express();
@@ -18,15 +21,17 @@ server.set("view engine","ejs");
 
 server.get("/", (req, res) => {
     res.render("index");
-    console.log("Index page loaded...");
+    console.log("\nIndex page loaded...");
   });
 
 server.get("/second", (req, res) => {
     res.render("thanku");
     console.log("Form submitted...");
   });
+// Path to save images
+const upload = multer({dest : __dirname+'/uploads/'});
 
-server.post("/submit", (req, res) => {
+server.post("/submit", upload.single("image"), (req, res) => {
     evname = req.body.evname;
     caption = req.body.caption;
     desc = req.body.desc;
@@ -36,6 +41,30 @@ server.post("/submit", (req, res) => {
       reg = req.body.reg;
     coname = req.body.coname;
     email = req.body.email;
+
+    // Uploading Image to ./uploads/
+    const tempPath = req.file.path;
+    const imageName = uuid().toString()+'.png';
+    const targetPath = path.join(__dirname, "./uploads/"+imageName);
+
+    if (path.extname(req.file.originalname).toLowerCase() === ".png" || path.extname(req.file.originalname).toLowerCase() === ".jpeg") {
+      fs.rename(tempPath, targetPath, err => {
+        if (err) 
+          return handleError(err, res);
+      });
+    } 
+    else {
+      fs.unlink(tempPath, err => {
+        if (err) return handleError(err, res);
+
+        res
+          .status(403)
+          .contentType("text/plain")
+          .end("Only .png and .jpeg files are allowed!");
+      });
+    }
+    //Image Uploaded..!
+    console.log(tempPath + ',' + targetPath + ',' + imageName);
     let details = `
     Event Details
     Event Name : ${evname}
@@ -46,7 +75,7 @@ server.post("/submit", (req, res) => {
     Co-ordinator Details
     Name : ${coname}
     Email : ${email}
-    ___________________________________
+    _____________________________________
     `;
     fs.appendFile("reg_details.txt", details, function(err) {
       if(err) {
