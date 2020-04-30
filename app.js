@@ -64,20 +64,20 @@ server.post("/submit", upload.single("image"), (req, res) => {
       });
     }
     //Image Uploaded..!
-    console.log(tempPath + ',' + targetPath + ',' + imageName);
     let details = `
     Event Details
     Event Name : ${evname}
     Caption : ${caption}
     Description : ${desc}
     Registration : ${reg}
+    Image : ./uploads/${imageName}
 
     Co-ordinator Details
     Name : ${coname}
     Email : ${email}
-    _____________________________________
+    _________________________________________________
     `;
-    fs.appendFile("reg_details.txt", details, function(err) {
+    fs.appendFile("registration_details.txt", details, function(err) {
       if(err) {
           return console.log(err);
       }
@@ -86,7 +86,7 @@ server.post("/submit", upload.single("image"), (req, res) => {
     res.redirect('/second');
 });
 
-const port = process.env.port | 7000
+const port = process.env.port || 7000
 server.listen(port, () => {
     console.log("Server running at port "+port);
 });

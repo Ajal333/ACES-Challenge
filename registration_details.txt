@@ -1,0 +1,25 @@
+
+    Event Details
+    Event Name : Test Event 1
+    Caption : Test Caption 1
+    Description : Test Description 1
+    Registration : Closed
+    Image : ./uploads/c787dc35-af55-4756-b4de-ce8d2b7bb4a6.png
+
+    Co-ordinator Details
+    Name : Test Name 1
+    Email : testemail1@gmail.com
+    _________________________________________________
+    
+    Event Details
+    Event Name : Test Event 2
+    Caption : Test Caption 2
+    Description : Test Description 2
+    Registration : Open
+    Image : ./uploads/d68944a0-4183-4e43-ac62-351be1da8e40.png
+
+    Co-ordinator Details
+    Name : Test Name 2
+    Email : testemail2@gmail.com
+    _________________________________________________
+    
