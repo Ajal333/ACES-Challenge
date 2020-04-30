@@ -1,7 +1,7 @@
 const express = require("express");
 const ejs = require("ejs");
 const bodyParser = require("body-parser");
-const nodemailer = require("nodemailer");
+const fs = require('fs');
 
 // CREATE SERVER
 const server = express();
@@ -48,6 +48,12 @@ server.post("/submit", (req, res) => {
     Email : ${email}
     `;
     console.log(details);
+    fs.writeFile("/reg_details", details, function(err) {
+      if(err) {
+          return console.log(err);
+      }
+      console.log("The file was saved!");
+  });
     res.redirect('/second');
 });
 
