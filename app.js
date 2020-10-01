@@ -86,7 +86,7 @@ server.post("/submit", upload.single("image"), (req, res) => {
     res.redirect('/second');
 });
 
-// port details
+// PORT DETAILS
 const port = process.env.port || 7000
 server.listen(port, () => {
     console.log("Server running at port "+port);
