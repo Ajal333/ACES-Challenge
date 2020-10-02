@@ -24,8 +24,8 @@ server.get("/", (req, res) => {
     console.log("\nIndex page loaded...");
   });
 
-server.get("/second", (req, res) => {
-    res.render("thanku");
+server.get("/success", (req, res) => {
+    res.render("success");
     console.log("Form submitted...");
   });
 // Path to save images
@@ -83,7 +83,7 @@ server.post("/submit", upload.single("image"), (req, res) => {
       }
       console.log("Details Saved...");
   });
-    res.redirect('/second');
+    res.redirect('/success');
 });
 
 // PORT DETAILS
