@@ -83,7 +83,7 @@ server.post("/submit", upload.single("image"), (req, res) => {
       }
       console.log("Details Saved...");
   });
-    res.redirect('/second');
+    res.redirect('/success');
 });
 
 // port details
