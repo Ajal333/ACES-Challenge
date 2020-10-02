@@ -24,8 +24,8 @@ server.get("/", (req, res) => {
     console.log("\nIndex page loaded...");
   });
 
-server.get("/second", (req, res) => {
-    res.render("thanku");
+server.get("/success", (req, res) => {
+    res.render("success");
     console.log("Form submitted...");
   });
 // Path to save images
